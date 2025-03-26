@@ -1,130 +1,152 @@
-body { 
-    background-color: #2b2eff;
+:root {
+    --color-primario: #FF3D00;
+    --color-secundario: #FF6E40;
+    --color-fondo: #000000;
+    --color-texto: #FAFAFA;
+    --color-boton: #FF5722;
+    --color-sombra: rgba(255, 61, 0, 0.3);
+}
+
+body {
+    background-color: var(--color-fondo);
+    color: var(--color-texto);
     margin: 0;
     display: flex;
     justify-content: center;
     align-items: center;
+    min-height: 100vh;
     font-family: 'Merriweather', sans-serif;
- } 
-  
- h2 {
-    color: #4042b8;
-    margin-bottom: 20px;
-    text-align: center;
-     
- }
-  
- section {
-    background: rgb(99, 187, 228);
+}
+
+section {
+    background-color: #212121;
+    border: 2px solid var(--color-primario);
+    color: var(--color-texto);
     padding: 20px;
     border-radius: 15px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 0 15px var(--color-sombra);
     width: 90%;
     max-width: 400px;
-     
- }
-  
- 
-  
- input {
-     font-size: 1rem;
-     padding: 10px;
-     border-radius: 10px;
-     border: 2px solid #90caf9;
-     margin-right: 4rem;
-     flex-grow: 1;
- }
-  
- #botonAgregarTarea{
-     background-color: #229410;
-     color: #373737;
-     font-size: 1.5rem;
-     font-weight: 700;
-     border: none;
-     padding: 10px 20px;
-     border-radius: 10px;
-     cursor: pointer;
-     transition: background-color 0.3 ease;
-  }
-  
- #botonAgregarTarea:hover {
-     background-color: #31961f;
- }
-  
- 
- #listaTareas {
+}
+
+h2 {
+    color: var(--color-primario);
+    margin-bottom: 20px;
+    text-align: center;
+    text-shadow: 0 0 5px rgba(255, 61, 0, 0.5);
+}
+
+.contenedorInputBoton {
+    display: flex;
+    margin-bottom: 20px;
+    gap: 10px;
+}
+
+input {
+    background-color: #212121;
+    color: var(--color-texto);
+    font-size: 1rem;
+    padding: 10px;
+    border-radius: 10px;
+    border: 1px solid var(--color-primario);
+    flex-grow: 1;
+}
+
+#botonAgregarTarea {
+    background-color: var(--color-boton);
+    color: var(--color-texto);
+    font-size: 1.5rem;
+    font-weight: 700;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 0 10px rgba(255, 87, 34, 0.5);
+}
+
+#botonAgregarTarea:hover {
+    background-color: var(--color-primario);
+    box-shadow: 0 0 15px rgba(255, 61, 0, 0.7);
+}
+
+#listaTareas {
+    border-radius: 10px;
     list-style-type: none;
     padding: 0;
     margin: 0;
- }
-  
- .tareaCreada {
-     display: flex;
-     justify-content: space-between;
-     align-items: center;
-     padding: 10px;
-     border-radius: 10px;
-     border: 1px solid #a5d6a7;
-     margin: 10px 0px;
-     background: #10aad1;
-     opacity: 0;
-     transform: translateX(-20px);
-     animation: slideIn 1s ease-out forwards;
-  }
-  
- @keyframes slideIn {
-     from {
-         opacity: 0;
-         transform: translateX(-20px);
-     }
-     to {
-         opacity: 1;
-         transform: translateX(0);
-     }
- }
-  
- .tareaCreada button {
-     margin-left: 10px;
-     border: none;
-     padding: 5px 10px;
-     border-radius: 5px;
-     cursor: pointer;
-     transition: background-color 0.3s ease;
- }
-  
- .botonMarcado {
-     background-color: #288b2d;
-     color: white;
- }
-  
- .botonDesmarcado {
-     background-color: rgba(173, 207, 245, 0.979);
-     color: black;
- }
-  
- .botonEliminar {
-     background-color: #a00707;
-     color: white;
- }
-  
- .botonEliminar:hover {
-     background-color: #d80505;
- }
- 
- 
- .botonSubir,
- .botonBajar {
-     background-color: #190688;
-     color: rgb(250, 234, 6);
-     border: none;
-     padding: 5px 10px;
-     border-radius: 5px;
-     cursor: pointer;
-     margin-left: 5px;
-     transition: background-color 0.3s ease;
- }
- 
- .botonSubir:hover,
- .botonBajar:hover {
-     background-color: #1a0f7e;
- }
+}
+
+.tareaCreada {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    border-radius: 10px;
+    margin: 10px 0;
+    background-color: #212121;
+    border: 1px solid #424242;
+    opacity: 0;
+    transform: translateY(20px);
+    animation: slideIn 0.4s ease-out forwards;
+}
+
+.contenedorTexto {
+    flex: 1;
+    min-width: 0;
+    word-wrap: break-word;
+    white-space: normal;
+    overflow: visible;
+    padding: 5px;
+}
+
+@keyframes slideIn {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.tareaCreada button {
+    margin-left: 8px;
+    border: none;
+    padding: 6px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.botonMarcado {
+    background-color: var(--color-primario);
+    color: var(--color-texto);
+    box-shadow: 0 0 5px rgba(255, 61, 0, 0.5);
+}
+
+.botonDesmarcado {
+    background-color: #424242;
+    color: var(--color-texto);
+}
+
+.botonEliminar {
+    background-color: #D32F2F;
+    color: var(--color-texto);
+}
+
+.botonSubir, .botonBajar {
+    background-color: #616161;
+    color: var(--color-texto);
+}
+
+.botonMarcado:hover {
+    background-color: #DD2C00;
+    transform: scale(1.05);
+}
+
+.botonEliminar:hover {
+    background-color: #B71C1C;
+    transform: scale(1.1);
+}
+
+.botonSubir:hover, .botonBajar:hover {
+    background-color: #757575;
+}

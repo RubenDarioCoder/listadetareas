@@ -10,10 +10,10 @@
 body {
     background-color: var(--color-fondo);
     color: var(--color-texto);
-    margin: 0;
+    margin: 10px;
     display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: flex-start;
     min-height: 100vh;
     font-family: 'Merriweather', sans-serif;
 }

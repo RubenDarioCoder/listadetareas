@@ -7,6 +7,14 @@
     --color-sombra: rgba(255, 61, 0, 0.3);
 }
 
+.logo-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
 body {
     background-color: var(--color-fondo);
     color: var(--color-texto);
